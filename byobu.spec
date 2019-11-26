@@ -4,7 +4,7 @@
 #
 Name     : byobu
 Version  : 5.129
-Release  : 1
+Release  : 2
 URL      : https://launchpad.net/byobu/trunk/5.129/+download/byobu_5.129.orig.tar.gz
 Source0  : https://launchpad.net/byobu/trunk/5.129/+download/byobu_5.129.orig.tar.gz
 Summary  : No detailed summary available
