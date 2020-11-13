@@ -4,7 +4,7 @@
 #
 Name     : byobu
 Version  : 5.129
-Release  : 2
+Release  : 3
 URL      : https://launchpad.net/byobu/trunk/5.129/+download/byobu_5.129.orig.tar.gz
 Source0  : https://launchpad.net/byobu/trunk/5.129/+download/byobu_5.129.orig.tar.gz
 Summary  : No detailed summary available
@@ -74,14 +74,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574805537
+export SOURCE_DATE_EPOCH=1605245550
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -91,10 +91,10 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1574805537
+export SOURCE_DATE_EPOCH=1605245550
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/byobu
 cp %{_builddir}/byobu-5.129/COPYING %{buildroot}/usr/share/package-licenses/byobu/842745cb706f8f2126506f544492f7a80dbe29b3
