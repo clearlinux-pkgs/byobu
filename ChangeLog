@@ -1,9 +1,71 @@
-byobu (5.129) released; urgency=medium
+byobu (5.133) released; urgency=medium
+
+  * debian/docs: Closes: #951455
+    - fix FTBFS on README
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Mon, 17 Feb 2020 08:11:50 -0600
+
+byobu (5.132-0ubuntu1) focal; urgency=medium
+
+  * debian/control, debian/rules:
+    - pep8 binary is gone from Debian, disable for now
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Sat, 15 Feb 2020 11:52:39 -0600
+
+byobu (5.131-0ubuntu1) focal; urgency=medium
+
+  [ Dustin Kirkland ]
+  * debian/control: Closes: #949941
+    - build-depend on python3-pep8, rather than pep8 transitional package
+  * usr/lib/byobu/disk:
+    - change disk status to white on darker magenta/purple, helps with
+      readability on some terminals
+
+  [ github.com/llitz ]
+  * usr/lib/byobu/include/select-session.py: LP: #1750430
+    - commit edeae41 fixed the excessive creation of sessions by not
+      creating different sessions. This commit adjust the behavior in a way
+      that having .reuse-sessions enabled tmux will properly attach and remove
+      sessions when dettaching and will also kill the last session available
+    - When more than two sessions exist, tmux asks which session to use
+
+  [ Chris Coulson ]
+  * usr/share/byobu/keybindings/f-keys.tmux: LP: #1861555
+    - Update usage of tmux swap-window so that focus stays with the
+      original window.
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Sun, 09 Feb 2020 10:51:11 -0600
+
+byobu (5.130-0ubuntu1) focal; urgency=medium
+
+  [ Ricardo N Feliciano ]
+  * usr/lib/byobu/logo:
+    - add Raspbian colors / logo
+      + https://github.com/dustinkirkland/byobu/pull/34
+
+  [ bryango ]
+  * usr/lib/byobu/include/select-session.py:
+    - Force UTF-8 when attaching in `select-session.py`
+    - https://github.com/dustinkirkland/byobu/pull/35
+
+  [ Dustin Kirkland ]
+  * debian/rules:
+    - ignore new pep8 rules around hard tabs and whitespaces, related
+      to bug 1843729
+
+  [ saroj990 and Dustin Kirkland ]
+  * AUTHORS, CONTRIBUTING, NEWS, README, README.md:
+    - Flatten these files into a single README.md
+    - Minor updates in the process
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Fri, 29 Nov 2019 15:40:38 -0600
+
+byobu (5.129-0ubuntu1) eoan; urgency=medium
 
   * debian/control:
     - recommend less package, for BYOBU_PAGER
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 11 Jun 2019 19:56:15 -0500
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 12 Jun 2019 18:41:07 -0500
 
 byobu (5.128-0ubuntu1) eoan; urgency=medium
 
